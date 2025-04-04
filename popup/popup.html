@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <h1>AnkiAiFox</h1>
+    <div class="settings">
+      <div class="setting">
+        <label for="apiKey">LLM API Key:</label>
+        <input type="password" id="apiKey" placeholder="Enter your API key">
+      </div>
+      <div class="setting">
+        <label for="apiAddress">API Address:</label>
+        <input type="text" id="apiAddress" placeholder="Enter API address (e.g., https://api.openai.com)">
+      </div>
+      <div class="setting">
+        <label for="deckName">Anki Deck:</label>
+        <input type="text" id="deckName" placeholder="Enter deck name">
+      </div>
+      <div class="setting">
+        <label for="noteType">Note Type:</label>
+        <select id="noteType">
+          <option value="Basic">Basic</option>
+          <option value="Cloze">Cloze</option>
+        </select>
+      </div>
+      <div class="setting">
+        <label for="modelType">LLM Model:</label>
+        <select id="modelType">
+          <option value="gpt-4o-mini">GPT-4o-mini</option>
+          <option value="gpt-4o">GPT-4o</option>
+        </select>
+      </div>
+      <button id="saveSettings">Save Settings</button>
+    </div>
+    <div class="actions">
+      <button id="generateCards">Generate Cards from Current Page</button>
+    </div>
+    <div id="status" class="status"></div>
+    <div id="loading" class="loading-container hidden">
+      <div class="spinner"></div>
+      <div class="loading-text">Processing content with LLM...</div>
+    </div>
+    <div id="cardReview" class="card-review">
+      <h2>Review Cards</h2>
+      <div id="cardList"></div>
+      <button id="submitCards" class="hidden">Add to Anki</button>
+    </div>
+  </div>
+  <script src="../js/popup.js"></script>
+</body>
+</html> 
